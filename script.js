@@ -28,14 +28,14 @@
     }
 dictionary.innerHTML = ` 
 <div class="word__container">
-  <h3>${info.word}</h3><button src="${info.phonetics[0].audio}" class="material-symbols-outlined">
-  <span> <audio controls src="${info.phonetics[0].audio}"></audio> </span>       
+  <h3>${info.word}</h3><button  class="material-symbols-outlined">
+  <span> <audio controls src="${info.phonetics[0].audio}"></audio></span>       
   </button>
 </div>
-<div class="details">${info.phonetic}</div>
+<div class="details">${info.phonetic || ''}</div>
 <div class="details"> <span>${partOfSpeechArr.map(e => e).join(', ')}</span> </div>
 <div class="definition">${info.meanings[0].definitions[0].definition}
-<br><div class="sentence">${info.meanings[0].definitions[0].example}</div>
+<br><div class="sentence">${info.meanings[0].definitions[0].example || ''}</div>
 `
 
   }
