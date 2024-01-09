@@ -20,7 +20,7 @@
   
   const updatePage = async () =>{
     const info = await dictionaryApi(searchBar.value)
-    console.log(info)
+   
   
     let partOfSpeechArr = []
     for (let i = 0; i<info.meanings.length-1; i++){
