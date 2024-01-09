@@ -29,6 +29,8 @@ overflow: hidden;
 display: flex;
 justify-content: space-around;
 
+
+
 }
 .title{
 text-align: center;
@@ -129,4 +131,7 @@ justify-content: space-between;
   padding-left: 1.3rem;
   margin-bottom: 1rem;
   margin-top: 2rem;
+}
+.hide{
+  max-width: 35rem;
 }
