@@ -19,6 +19,7 @@ overflow: hidden;
   
 }
 .card{
+  
   background-color: rgba(255,255,255,0.2);
   border: 2px solid rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
@@ -135,3 +136,30 @@ justify-content: space-between;
 .hide{
   max-width: 35rem;
 }
+audio{
+  width: 13rem;
+}
+
+@media only screen and (max-width: 450px) {
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.card{
+ width: 22rem;
+ 
+ 
+}
+.search-bar{
+width: 11rem;
+}
+.hide{
+    width: 19rem;
+  }
+  audio{
+    width: 10rem;
+  }
+}
+  
