@@ -4,7 +4,7 @@
   const soundBtn = document.querySelector(".volume");
   const wordResult = document.querySelector(".word");
   const dictionary = document.querySelector('.hide')
-  const definitionElement = document.querySelector('.definition');
+ 
 
 
 
@@ -22,19 +22,20 @@
     const info = await dictionaryApi(searchBar.value)
     console.log(info)
   
-    let definitionArray = []
+    let partOfSpeechArr = []
     for (let i = 0; i<info.meanings.length-1; i++){
-      definitionArray.push(info.meanings[i].partOfSpeech)
+      partOfSpeechArr.push(info.meanings[i].partOfSpeech)
     }
 dictionary.innerHTML = ` 
 <div class="word__container">
   <h3>${info.word}</h3><button src="${info.phonetics[0].audio}" class="material-symbols-outlined">
-    volume_up           
+  <span> <audio controls src="${info.phonetics[0].audio}"></audio> </span>       
   </button>
 </div>
 <div class="details">${info.phonetic}</div>
+<div class="details"> <span>${partOfSpeechArr.map(e => e).join(', ')}</span> </div>
 <div class="definition">${info.meanings[0].definitions[0].definition}
-<br>
+<br><div class="sentence">${info.meanings[0].definitions[0].example}</div>
 `
 
   }
