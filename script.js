@@ -1,4 +1,4 @@
-( () => {
+(() => {
   const searchBar = document.querySelector(".search-bar");
   const searchBtn = document.querySelector(".button");
   const dictionary = document.querySelector(".hide");
@@ -17,19 +17,30 @@
     for (let i = 0; i < info.meanings.length - 1; i++) {
       partOfSpeechArr.push(info.meanings[i].partOfSpeech);
     }
-    dictionary.innerHTML = ` 
-<div class="word__container">
-  <h3>${info.word}</h3>
-   <audio controls src="${info.phonetics[0].audio}"></audio>
- 
-</div>
-<div class="details">${info.phonetic || ""}</div>
-<div class="details"> <span>${partOfSpeechArr
+    function updateWithAnimation() {
+      dictionary.style.opacity = 0;
+
+      setTimeout(function () {
+        dictionary.innerHTML = ` 
+     <div class="word__container">
+      <h3>${info.word}</h3>
+       <audio controls src="${info.phonetics[0].audio}"></audio>
+     
+    </div>
+    <div class="details">${info.phonetic || ""}</div>
+    <div class="details"> <span>${partOfSpeechArr
       .map((e) => e)
       .join(", ")}</span> </div>
-<div class="definition">${info.meanings[0].definitions[0].definition}
-<br><div class="sentence">${info.meanings[0].definitions[0].example || ""}</div>
-`;
+    <div class="definition">${info.meanings[0].definitions[0].definition}
+    <br><div class="sentence">${
+      info.meanings[0].definitions[0].example || ""
+    }</div>
+    `;
+        dictionary.style.opacity = 1;
+      }, 300);
+    }
+
+    setTimeout(updateWithAnimation);
   };
 
   searchBtn.addEventListener("click", updatePage);

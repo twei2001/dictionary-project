@@ -116,18 +116,13 @@ main {
 }
 .hide {
   max-width: 35rem;
+  transition: opacity 0.5s ease-in-out;
 }
 audio {
   width: 13rem;
 }
 
 @media only screen and (max-width: 450px) {
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
   .card {
     width: 22rem;
   }
