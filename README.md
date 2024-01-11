@@ -16,7 +16,7 @@ git clone https://github.com/twei2001/dictionary-project.git
 A live demo of the Dictionary App is available at [LINK TO LIVE DEMO](https://twei2001.github.io/dictionary-project/).
 
 # Credits
-- The app uses the [Free Dictionary API](https://dictionaryapi.dev).
+The app uses the [Free Dictionary API](https://dictionaryapi.dev).
 
 # Author
 T. Weish
